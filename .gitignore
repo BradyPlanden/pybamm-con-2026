@@ -1,0 +1,19 @@
+# Slides: the editable .pptx lives with the presenters, the PDF is committed
+*.pptx
+~$*
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info
+.venv
+venv
+env
+.env
+
+# OS / editors
+.DS_Store
+.vscode
+.idea

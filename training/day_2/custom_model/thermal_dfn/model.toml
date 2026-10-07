@@ -1,0 +1,25 @@
+[model]
+slug = "thermal_dfn"
+name = "ThermalDFN"
+title = "Doyle-Fuller-Newman model with a lumped thermal energy balance"
+summary = "A from-scratch DFN coupled to a single cell temperature, for teaching how to write a standalone model."
+# In the zoo this becomes "pybamm_model_zoo.thermal_dfn:ThermalDFN"
+class = "thermal_dfn:ThermalDFN"
+tier = "community"
+pybamm_requires = ">=26.9"
+added = "2026-10-15"
+license = "BSD-3-Clause"
+
+[[model.maintainers]]
+name = "The PyBaMM Team"
+github = "pybamm-team/maintainers"
+
+[model.citation]
+key = "PyBaMMConference2026"
+
+[model.tests]
+# No parameter_set: the model's own default_parameter_values supplies the new
+# "Cell heat capacity [J.K-1]" parameter.
+solve_time = 3600
+key_variables = ["Voltage [V]", "Temperature [K]"]
+skip_contract = []

@@ -1,0 +1,3 @@
+pybamm[all]==26.9.0.0
+pybamm-model-zoo==0.1.0
+pytest
