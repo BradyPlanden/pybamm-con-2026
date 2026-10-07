@@ -21,7 +21,7 @@ There is a 1.5 hour training session on each day: a ~30 minute talk, followed
 by ~1 hour of self-guided work through the notebooks, with members of the
 PyBaMM team on hand to help. You are welcome to bring your own problems.
 
-### Day 1: PyBaMM basics and real-world simulations — [`training/day_1`](training/day_1)
+### Day 1: PyBaMM basics and practical simulations — [`training/day_1`](training/day_1)
 
 Slides: [`day_1_slides.pdf`](training/day_1/day_1_slides.pdf)
 
@@ -33,9 +33,13 @@ Slides: [`day_1_slides.pdf`](training/day_1/day_1_slides.pdf)
 | [`04-rpt-experiment`](training/day_1/04-rpt-experiment.ipynb) | Ageing cycles with reference performance tests |
 | [`05-custom-experiments`](training/day_1/05-custom-experiments.ipynb) | Custom terminations, explicit and implicit control |
 
-### Day 2: the model zoo, custom models, input parameters and solvers — [`training/day_2`](training/day_2)
+### Day 2: the model zoo, custom models and performance — [`training/day_2`](training/day_2)
 
 Slides: [`day_2_slides.pdf`](training/day_2/day_2_slides.pdf)
+
+Day 2 has two tracks. The talk covers both; for the self-guided hour, pick
+the **model track** (notebooks 01–02: the model zoo and writing your own model)
+or the **performance track** (notebooks 03–04: input parameters and solvers).
 
 | Notebook | Topics |
 | --- | --- |
