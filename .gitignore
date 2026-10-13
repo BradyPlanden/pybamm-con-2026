@@ -1,5 +1,6 @@
 # Slides: the editable .pptx lives with the presenters, the PDF is committed
 *.pptx
+slides/
 ~$*
 
 # Python
