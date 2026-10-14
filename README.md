@@ -64,11 +64,13 @@ You need Python 3.10–3.14. We recommend a fresh virtual environment:
 ```bash
 git clone https://github.com/pybamm-team/pybamm-con-2026
 cd pybamm-con-2026
-python -m venv .venv
-source .venv/bin/activate  # on Windows: .venv\Scripts\activate
+python3 -m venv .venv          # on Windows: python -m venv .venv
+source .venv/bin/activate      # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter lab
 ```
 
-`requirements.txt` pins PyBaMM and the model zoo to the versions the notebooks
-were tested with.
+This installs [PyBaMM](https://github.com/pybamm-team/PyBaMM) 26.10.1.0 and the
+[PyBaMM model zoo](https://github.com/pybamm-team/PyBaMM/tree/main/packages/pybamm-model-zoo)
+0.1.0, the versions the notebooks were tested with. The install downloads a few
+hundred MB of dependencies, so please run it before the session.

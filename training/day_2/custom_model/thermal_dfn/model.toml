@@ -6,7 +6,7 @@ summary = "A from-scratch DFN coupled to a single cell temperature, for teaching
 # In the zoo this becomes "pybamm_model_zoo.thermal_dfn:ThermalDFN"
 class = "thermal_dfn:ThermalDFN"
 tier = "community"
-pybamm_requires = ">=26.9"
+pybamm_requires = ">=26.10"
 added = "2026-10-15"
 license = "BSD-3-Clause"
 
