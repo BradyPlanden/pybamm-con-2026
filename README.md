@@ -35,7 +35,8 @@ Slides: [`day_1_slides.pdf`](training/day_1/day_1_slides.pdf)
 
 ### Day 2: the model zoo, custom models and performance — [`training/day_2`](training/day_2)
 
-Slides: [`day_2_slides.pdf`](training/day_2/day_2_slides.pdf)
+Slides: [`day_2_slides.pdf`](training/day_2/day_2_slides.pdf), plus a one-slide
+model zoo overview: [`model_zoo_slide.pdf`](training/day_2/model_zoo_slide.pdf)
 
 Day 2 has two tracks. The talk covers both; for the self-guided hour, pick
 the **model track** (notebooks 01–02: the model zoo and writing your own model)
