@@ -363,7 +363,7 @@ pybamm==26.10.1.0
     # via
     #   pybamm-con-2026
     #   pybamm-model-zoo
-pybamm-model-zoo==0.1.0
+pybamm-model-zoo==0.1.1
     # via pybamm-con-2026
 pybammsolvers==0.11.1
     # via pybamm

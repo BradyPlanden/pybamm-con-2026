@@ -65,7 +65,7 @@ ZIP from the green **Code** button). The install downloads a few hundred MB, so
 please run it before the session. Both routes below install
 [PyBaMM](https://github.com/pybamm-team/PyBaMM) 26.10.1.0 and the
 [PyBaMM model zoo](https://github.com/pybamm-team/PyBaMM/tree/main/packages/pybamm-model-zoo)
-0.1.0, the versions the notebooks were tested with.
+0.1.1, the versions the notebooks were tested with.
 
 ### With uv (recommended)
 
