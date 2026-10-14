@@ -1,0 +1,17 @@
+[project]
+name = "pybamm-con-2026"
+version = "2026.10"
+description = "Training material for the PyBaMM Battery Modelling Conference 2026"
+readme = "README.md"
+requires-python = ">=3.10, <3.16"
+# After changing these, run `uv lock` and then
+# `uv export --no-hashes -o requirements.txt` so pip users get the same pins.
+dependencies = [
+    "pybamm[all]==26.10.1.0",
+    "pybamm-model-zoo==0.1.0",
+    "pytest",
+]
+
+[tool.uv]
+# Training material, not a package: uv only manages the environment.
+package = false
