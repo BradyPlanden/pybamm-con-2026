@@ -13,11 +13,14 @@ pytest
 
 [`conftest.py`](conftest.py) registers this folder with the zoo as an external
 collection. [`test_contract.py`](test_contract.py) then runs the zoo's model
-contract on every model in it, alongside each model's own `tests/`.
+contract and example scripts on every model in it, alongside each model's own
+`tests/`.
 
 ## Adding a model to the zoo
 
-In a fork of [PyBaMM](https://github.com/pybamm-team/PyBaMM), with the dev
+First read the
+[model zoo policy](https://github.com/pybamm-team/PyBaMM/blob/main/packages/pybamm-model-zoo/POLICY.md):
+opening a pull request that adds a model means agreeing to it. Then, in a fork of [PyBaMM](https://github.com/pybamm-team/PyBaMM), with the dev
 environment installed (`uv sync --extra all --group dev`):
 
 1. Render the template. This creates
@@ -35,7 +38,8 @@ environment installed (`uv sync --extra all --group dev`):
    It appears in two places: `class` in `model.toml` and the import in
    `__init__.py`.
 4. If the model needs third-party packages, declare them as a `zoo-<slug>` extra.
-   See the zoo README.
+   If it needs a newer PyBaMM than the zoo's current minimum, raise that minimum
+   in the same pull request. See the zoo README for both.
 5. Generate the docs page, then run the full contract and your tests:
 
    ```bash

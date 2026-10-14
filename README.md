@@ -59,18 +59,46 @@ pytest
 
 ## Installation
 
-You need Python 3.10–3.14. We recommend a fresh virtual environment:
+You need [Python](https://www.python.org/downloads/) 3.10–3.14 and
+[Git](https://git-scm.com/downloads) (or download this repository as a ZIP from
+the green **Code** button). The install downloads a few hundred MB, so please run
+it before the session.
+
+### macOS and Linux
 
 ```bash
 git clone https://github.com/pybamm-team/pybamm-con-2026
 cd pybamm-con-2026
-python3 -m venv .venv          # on Windows: python -m venv .venv
-source .venv/bin/activate      # on Windows: .venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 jupyter lab
 ```
 
+On Debian or Ubuntu, if `python3 -m venv` fails, install the venv module first
+with `sudo apt install python3-venv`.
+
+### Windows (PowerShell)
+
+```powershell
+git clone https://github.com/pybamm-team/pybamm-con-2026
+cd pybamm-con-2026
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+jupyter lab
+```
+
+If PowerShell refuses to run `Activate.ps1`, allow local scripts once with
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, or use Command Prompt and
+run `.venv\Scripts\activate.bat` instead.
+
+### Next time
+
+Activate the environment again before starting Jupyter:
+`source .venv/bin/activate` on macOS and Linux, `.venv\Scripts\Activate.ps1` on
+Windows.
+
 This installs [PyBaMM](https://github.com/pybamm-team/PyBaMM) 26.10.1.0 and the
 [PyBaMM model zoo](https://github.com/pybamm-team/PyBaMM/tree/main/packages/pybamm-model-zoo)
-0.1.0, the versions the notebooks were tested with. The install downloads a few
-hundred MB of dependencies, so please run it before the session.
+0.1.0, the versions the notebooks were tested with.

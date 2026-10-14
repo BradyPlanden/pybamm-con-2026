@@ -24,6 +24,7 @@ class ThermalDFN(pybamm.lithium_ion.BaseModel):
     """
 
     def __init__(self, name: str = "Thermal DFN") -> None:
+        pybamm_model_zoo.require(SLUG)
         super().__init__(name=name)
         pybamm_model_zoo.register_citation(SLUG, "PyBaMMConference2026", "Doyle1993")
         param = self.param
