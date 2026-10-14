@@ -1,0 +1,82 @@
+name: Windows install
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  uv:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      # Attendees may have no Python, so ignore the runner's and let uv download one
+      UV_PYTHON_PREFERENCE: only-managed
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        run: |
+          powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+          # Stands in for the README's "open a new terminal"
+          "$HOME\.local\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
+
+      - name: Install the environment
+        run: |
+          (Get-Command uv).Source
+          uv sync --locked
+
+      - name: Check the install
+        run: |
+          uv run python -c "import sys, pybamm, pybamm_model_zoo; print(sys.version, pybamm.__version__)"
+          uv run jupyter lab --version
+
+      - name: Custom model tests
+        working-directory: training/day_2/custom_model
+        run: uv run pytest -q
+
+      - name: Execute the notebooks
+        run: >
+          uv run jupyter nbconvert --to notebook --execute
+          --output-dir "$env:RUNNER_TEMP\executed"
+          --ExecutePreprocessor.timeout=1800
+          training/day_1/*.ipynb training/day_2/*.ipynb
+
+  pip:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.15"]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # `python` rather than the README's `py`: the launcher may pick a different
+      # installed version than the one this matrix entry is testing
+      - name: Install the environment
+        run: |
+          python -m venv .venv
+          .venv\Scripts\Activate.ps1
+          pip install -r requirements.txt
+
+      - name: Check the install
+        run: |
+          .venv\Scripts\Activate.ps1
+          python -c "import sys, pybamm, pybamm_model_zoo; print(sys.version, pybamm.__version__)"
+          jupyter lab --version
+
+      - name: Custom model tests
+        working-directory: training/day_2/custom_model
+        run: |
+          ..\..\..\.venv\Scripts\Activate.ps1
+          pytest -q
